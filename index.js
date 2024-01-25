@@ -7,6 +7,13 @@ const secondSectionli = document.querySelector(".second-section-li");
 
 window.onload = () => {
   getUser();
+  fetchData();
+};
+
+const fetchData = () => {
+  fetch(usersAPIURL)
+    .then((user) => user.json())
+    .then((res) => console.log("without promise", res));
 };
 
 let arr = [];
